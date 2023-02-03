@@ -6,6 +6,7 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import hotelRoute from "./routes/hotel.js";
 import roomRoute from "./routes/room.js";
+import cookieParser from "cookie-parser";
 mongoose.set('strictQuery', true)
 const app = express();
 dotenv.config()
@@ -29,6 +30,7 @@ mongoose.connection.on('disconnected', () => {
 
 
 ///MİDDLEWARE 
+app.use(cookieParser())
 app.use(express.json())
 
 
